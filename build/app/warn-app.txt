@@ -22,6 +22,7 @@ missing module named _frozen_importlib_external - imported by importlib._bootstr
 excluded module named _frozen_importlib - imported by importlib (optional), importlib.abc (optional)
 missing module named _posixsubprocess - imported by subprocess (conditional)
 missing module named fcntl - imported by subprocess (optional)
+missing module named cStringIO - imported by xlrd.timemachine (conditional)
 missing module named PIL - imported by openpyxl.drawing.image (optional)
 missing module named 'defusedxml.ElementTree' - imported by openpyxl.xml.functions (conditional)
 missing module named _scproxy - imported by urllib.request (conditional)
