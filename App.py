@@ -6,25 +6,29 @@ import openpyxl
 from collections import defaultdict
 import xlrd
 
+# Função para exibir mensagens no log
 def log_message(message):
     log_text.config(state=tk.NORMAL)
     log_text.insert(tk.END, message + "\n")
     log_text.config(state=tk.DISABLED)
-    log_text.yview(tk.END)  # Scroll to the end
-    root.update_idletasks()  # Force update of the GUI
+    log_text.yview(tk.END)  # Deslocar a barra de rolagem para o final
+    root.update_idletasks()  # Forçar a atualização da interface
 
+# Funções para selecionar arquivos
 def select_database():
     file_path = filedialog.askopenfilename(filetypes=[("Database files", "*.fdb")])
     if file_path:
         db_entry.delete(0, tk.END)
         db_entry.insert(0, file_path)
 
+# Função para selecionar arquivos
 def select_file():
     file_path = filedialog.askopenfilename(filetypes=[("Excel files", "*.xlsx;*.xls")])
     if file_path:
         file_entry.delete(0, tk.END)
         file_entry.insert(0, file_path)
 
+# Função para exibir a confirmação
 def show_confirmation(modifications):
     confirm_window = tk.Toplevel(root)
     confirm_window.title("Confirmar Modificações")
@@ -62,6 +66,7 @@ def show_confirmation(modifications):
     tk.Button(confirm_window, text="Confirmar", command=on_confirm).pack(side=tk.LEFT, padx=10, pady=10)
     tk.Button(confirm_window, text="Cancelar", command=confirm_window.destroy).pack(side=tk.RIGHT, padx=10, pady=10)
 
+# Função para carregar os dados
 def load_data():
     ipv4_address = ipv4_entry.get()
     port = port_entry.get()
@@ -183,6 +188,7 @@ def load_data():
         log_message(f"Erro: {e}")
         messagebox.showerror("Erro", f"Ocorreu um erro: {e}")
 
+# Função para atualizar o banco de dados
 def update_database(modifications):
     ipv4_address = ipv4_entry.get()
     port = port_entry.get()
