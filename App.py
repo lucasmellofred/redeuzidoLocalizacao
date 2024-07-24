@@ -8,9 +8,9 @@ import xlrd
 
 # Função para exibir mensagens no log
 def log_message(message):
-    log_text.config(state=tk.NORMAL)
-    log_text.insert(tk.END, message + "\n")
-    log_text.config(state=tk.DISABLED)
+    log_text.config(state=tk.NORMAL) # Habilitar a edição do texto
+    log_text.insert(tk.END, message + "\n") # Adicionar a mensagem ao final do texto
+    log_text.config(state=tk.DISABLED) # Desabilitar a edição do texto
     log_text.yview(tk.END)  # Deslocar a barra de rolagem para o final
     root.update_idletasks()  # Forçar a atualização da interface
 
