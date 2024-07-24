@@ -150,7 +150,8 @@ def load_data():
                 # Garantir que reduzido, rua e posicao não são None
                 if reduzido is None or rua is None or posicao is None:
                     continue
-
+                
+                # Convertendo para string e removendo espaços em branco
                 reduzido = str(reduzido).strip()
                 localizacao = str(rua).strip() + str(posicao).strip()
 
